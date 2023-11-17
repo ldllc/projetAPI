@@ -1,6 +1,6 @@
 # Projet API
 
-__Commandes pour commit :__
+___Commandes pour commit :___
 
 ```git
 git add .

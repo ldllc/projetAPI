@@ -1,6 +1,6 @@
 # Projet API
 
-Commandes pour commit :
+__Commandes pour commit :__
 
 ```git
 git add .
@@ -9,4 +9,4 @@ git commit
 git push
 ```
 
-Deadline vendredi 17 novembre 2023 à 15:54
+*/!\ Deadline vendredi 17 novembre 2023 à 15:54 /!\*

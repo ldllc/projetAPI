@@ -17,7 +17,7 @@ Product.init(
             allowNull: false
         },
         prix: {
-            type: DataTypes,DECIMAL(10, 2),
+            type: DataTypes.DECIMAL(10, 2),
             allowNull: false,
             validate: {
                 min: 0,

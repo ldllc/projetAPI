@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const event = require('../models/event');
 
-// recuperer tous les events
+// récuperer tous les events
 router.get('/', async (req, res)=> {
     try 
     {
@@ -16,7 +16,7 @@ router.get('/', async (req, res)=> {
     }
 });
 
-// recuperer un event avec son id
+// récuperer un event avec son id
 router.get('/:eventId', async (req, res) => {
     const eventId = req.params.id;
   
@@ -39,7 +39,7 @@ router.get('/:eventId', async (req, res) => {
   });
 
 
-  //recuperer tous les evenement d'un certain type
+  //récuperer tous les évènement d'un certain type
   router,get('/:eventType', async (req, res) => {
     const eventType = req.params.eventType;
 

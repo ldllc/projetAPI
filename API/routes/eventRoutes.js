@@ -13,10 +13,12 @@ router.get('/', async (req, res)=> {
     catch (error) 
     {
         console.error(error);
-        res.status(500).send("erreur");
+        res.status(500).send("error");
     }
 });
 
+
+// get event by ID
 router.get('/:eventId', async (req, res) => {
     const eventId = req.params.id;
   
@@ -34,6 +36,55 @@ router.get('/:eventId', async (req, res) => {
     catch (error) 
     {
       console.error(error);
-      res.status(500).send('Internal Server Error');
+      res.status(500).send('error');
     }
   });
+
+
+  // search for the events of a specific type 
+
+  router,get('/:eventType', async (req, res) => {
+    const eventType = req.params.eventType;
+
+    try
+    {
+        const eventOfType = await Event.findAll({where: {typeOfEvent: eventType}});
+    }
+    catch (error)
+    {
+        console.error(error);
+        res.status(500).send('error');
+    }
+  });
+
+
+
+
+  // delete an event with ID
+  router.delete('/:eventId', async (req, res) => {
+    const eventId = req.params.id;
+  
+    try 
+    {
+      const event = await Event.findByPk(eventId);
+  
+      if (!event) {
+        return res.status(404).send('Event not found');
+      }
+  
+      await event.destroy();
+  
+      res.send('event deleted successfully');
+    } 
+    catch (error) 
+    {
+      console.error(error);
+      res.status(500).send('error');
+    }
+  });
+
+
+
+
+
+

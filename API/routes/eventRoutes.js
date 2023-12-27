@@ -1,9 +1,11 @@
 const express = require('express');
 const router = express.Router();
 const event = require('../models/event');
+const checkAuth = require("../middlewares/checkAuth");
+
 
 // recuperer tous les events
-router.get('/', async (req, res)=> {
+router.get('/', checkAuth, async (req, res)=> {
     try 
     {
         const events = await Event.findAll();
@@ -17,7 +19,7 @@ router.get('/', async (req, res)=> {
 });
 
 // recuperer un event avec son id
-router.get('/:eventId', async (req, res) => {
+router.get('/:eventId', checkAuth, async (req, res) => {
     const eventId = req.params.id;
   
     try 
@@ -40,7 +42,7 @@ router.get('/:eventId', async (req, res) => {
 
 
   //recuperer tous les evenement d'un certain type
-  router,get('/:eventType', async (req, res) => {
+  router,get('/:eventType', checkAuth, async (req, res) => {
     const eventType = req.params.eventType;
 
     try
@@ -57,7 +59,7 @@ router.get('/:eventId', async (req, res) => {
 
 
   //supprimer un event avec son id 
-  router.delete('/:eventId', async (req, res) => {
+  router.delete('/:eventId', checkAuth, async (req, res) => {
     const eventId = req.params.id;
   
     try 

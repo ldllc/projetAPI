@@ -1,8 +1,10 @@
 const express = require('express');
 const router = express.Router();
 const Lieu = require('../models/lieu');
+const checkAuth = require("../middlewares/checkAuth");
 
-router.get('/', async (req, res) => {
+
+router.get('/', checkAuth, async (req, res) => {
   try {
     const lieux = await Lieu.findAll();
     res.json(lieux);
@@ -12,7 +14,7 @@ router.get('/', async (req, res) => {
   }
 });
 
-router.get('/:id', async (req, res) => {
+router.get('/:id', checkAuth, async (req, res) => {
   const lieuId = req.params.id;
 
   try {
@@ -29,7 +31,7 @@ router.get('/:id', async (req, res) => {
   }
 });
 
-router.post('/', async (req, res) => {
+router.post('/', checkAuth, async (req, res) => {
   const { nom, adresse } = req.body;
 
   try {
@@ -41,7 +43,7 @@ router.post('/', async (req, res) => {
   }
 });
 
-router.put('/:id', async (req, res) => {
+router.put('/:id', checkAuth, async (req, res) => {
   const lieuId = req.params.id;
   const { nom, adresse } = req.body;
 
@@ -64,7 +66,7 @@ router.put('/:id', async (req, res) => {
   }
 });
 
-router.delete('/:id', async (req, res) => {
+router.delete('/:id', checkAuth, async (req, res) => {
   const lieuId = req.params.id;
 
   try {

@@ -3,7 +3,6 @@ const User = require("../models/User");
 const router = new Router();
 
 router.get("/users", async (req, res, next) => {
-  //res.status(200).send(JSON.stringify(users));
   res.json(
     await User.findAll({
       where: req.query,
@@ -26,7 +25,6 @@ router.get("/users/:id", async (req, res, next) => {
   if (user) {
     res.json(user);
   } else {
-    //res.status(404).end();
     res.sendStatus(404);
   }
 });

@@ -45,7 +45,3 @@ Event.init(
 Event.hasMany(Lieu, {foreignKey:"idLieu"});
 
 module.exports = Event;
-
-
-
-

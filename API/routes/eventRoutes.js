@@ -3,7 +3,6 @@ const router = express.Router();
 const event = require('../models/event');
 
 
-// get all events
 router.get('/', async (req, res)=> {
     try 
     {
@@ -18,7 +17,6 @@ router.get('/', async (req, res)=> {
 });
 
 
-// get event by ID
 router.get('/:eventId', async (req, res) => {
     const eventId = req.params.id;
   
@@ -40,9 +38,6 @@ router.get('/:eventId', async (req, res) => {
     }
   });
 
-
-  // search for the events of a specific type 
-
   router,get('/:eventType', async (req, res) => {
     const eventType = req.params.eventType;
 
@@ -60,7 +55,7 @@ router.get('/:eventId', async (req, res) => {
 
 
 
-  // delete an event with ID
+  
   router.delete('/:eventId', async (req, res) => {
     const eventId = req.params.id;
   
@@ -82,9 +77,3 @@ router.get('/:eventId', async (req, res) => {
       res.status(500).send('error');
     }
   });
-
-
-
-
-
-

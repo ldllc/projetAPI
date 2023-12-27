@@ -19,7 +19,7 @@ router.get('/', checkAuth, async (req, res)=> {
 });
 
 // recuperer un event avec son id
-router.get('/:eventId', checkAuth, async (req, res) => {
+router.get('/:eventId', async (req, res) => {
     const eventId = req.params.id;
   
     try 
@@ -42,7 +42,7 @@ router.get('/:eventId', checkAuth, async (req, res) => {
 
 
   //recuperer tous les evenement d'un certain type
-  router,get('/:eventType', checkAuth, async (req, res) => {
+  router,get('/:eventType', async (req, res) => {
     const eventType = req.params.eventType;
 
     try

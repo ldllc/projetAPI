@@ -1,6 +1,7 @@
 const { Model, DataTypes } = require("sequelize");
 const connection = require("./db");
 const bcrypt = require("bcryptjs");
+const Event = require("./event");
 
 class Lieu extends Model {}
 
@@ -27,5 +28,5 @@ Lieu.init(
     }
 );
 
-
+Lieu.belongsTo(Event, {foreingkey: "idLieu"});
 module.exports = Lieu;

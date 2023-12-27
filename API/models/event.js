@@ -14,17 +14,16 @@ Event.init
     typeOfEvent: {
         type: DataTypes.STRING,
         allowNull: false,
-    },
-
-    typeOfEvent: {
-        type: DataTypes.STRING,
-        allowNull: false,
         validate: {
           isIn: [['sport', 'fashion', 'music', 'business','education', 'politcs']]
         },
-      },
+    },
+
+
 
 })
+
+module.exports = Event;
 
 
 

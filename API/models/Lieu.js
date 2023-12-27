@@ -6,7 +6,7 @@ class Lieu extends Model {}
 
 Lieu.init(
     {
-        id: {
+        idLieu: {
             type: DataTypes.INTEGER,
             primaryKey: true,
             autoIncrement: true,
@@ -26,5 +26,6 @@ Lieu.init(
         modelName: 'Lieu',
     }
 );
+
 
 module.exports = Lieu;

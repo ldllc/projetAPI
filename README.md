@@ -15,4 +15,4 @@ Commandes pour mettre à jour :
 git pull
 ```
 
-<span style="color: #FF0000">Deadline vendredi 17 novembre 2023 à 15:54</span>
+<span style="color: #FF0000">Deadline mercredi 27 décembre 2023 à 23:59</span>
